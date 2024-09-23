@@ -1,0 +1,22 @@
+button {
+    cursor: pointer;
+    display: inline;
+    font-size: 2rem;
+    margin: 0.4rem;
+    color: #1d3557;
+    border-radius: 6%;
+    padding: 0.4rem 0rem;
+    width: 8rem;
+    margin: 0rem 0.8rem;
+    border: 3px solid black;
+}
+
+button:hover {
+    color: #011737;
+}
+
+button:disabled {
+    color: #808080;
+    background-color: #e3e3e3 !important;
+    border: 3px solid #808080;
+}

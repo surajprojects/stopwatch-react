@@ -1,0 +1,23 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #f1faee;
+    color: #1d3557;
+}
+
+h1 {
+    font-size: 8rem;
+    margin-bottom: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+#clockButtons {
+    display: flex;
+    flex-direction: row;
+}
