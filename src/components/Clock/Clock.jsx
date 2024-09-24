@@ -23,9 +23,9 @@ export default function UpdateClock() {
             clockHrs = clockHrs + 1;
         }
         else {
-            clockSecs = 0;
-            clockMins = 0;
             clockHrs = 0;
+            clockMins = 0;
+            clockSecs = 0;
             alert("ERROR ENCOUNTERED!!! PLEASE CONTACT US IF THE ERROR PERSISTS!!!");
         }
 
@@ -39,36 +39,23 @@ export default function UpdateClock() {
 
     const runClock = () => {
         intervalId.current = setInterval(handleClock, 1000);
-        setIsBtnDisabled(() => {
-            isBtnDisabled.startBtn = true;
-            isBtnDisabled.stopBtn = false;
-            isBtnDisabled.resetBtn = true;
-            return { ...isBtnDisabled };
+        setIsBtnDisabled((prevState) => {
+            return { ...prevState, startBtn: true, stopBtn: false, resetBtn: true };
         });
     };
 
     const stopClock = (id = intervalId) => {
         clearInterval(intervalId.current);
-        setIsBtnDisabled(() => {
-            isBtnDisabled.startBtn = false;
-            isBtnDisabled.stopBtn = true;
-            isBtnDisabled.resetBtn = false;
-            return { ...isBtnDisabled };
+        setIsBtnDisabled((prevState) => {
+            return { ...prevState, startBtn: false, stopBtn: true, resetBtn: false };
         });
     };
 
     const resetClock = () => {
-        setClock(() => {
-            clock[0] = 0;
-            clock[1] = 0;
-            clock[2] = 0;
-            return clock.map(t => t);
-        });
-        setIsBtnDisabled(() => {
-            isBtnDisabled.startBtn = false;
-            isBtnDisabled.stopBtn = true;
-            isBtnDisabled.resetBtn = true;
-            return { ...isBtnDisabled };
+        setClock([0, 0, 0]);
+
+        setIsBtnDisabled((prevState) => {
+            return { ...prevState, startBtn: false, stopBtn: true, resetBtn: true };
         });
     };
 
