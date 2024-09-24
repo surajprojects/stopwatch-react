@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
-import ClockDisplay from "./ClockDisplay";
-import Button from "./Button";
+import ClockDisplay from "../ClockDisplay/ClockDisplay";
+import Button from "../Button/Button";
 
 export default function UpdateClock() {
     const [clock, setClock] = useState([0, 0, 0]);

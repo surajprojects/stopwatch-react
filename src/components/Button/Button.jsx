@@ -1,4 +1,4 @@
-import "../assets/styles/Button.css"
+import "./Button.css"
 
 export default function Button({ handleClick, text = "Click", color = "#80ed99", isDisabled = false }) {
     return (
