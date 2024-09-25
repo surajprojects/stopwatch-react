@@ -3,21 +3,21 @@ import ClockDisplay from "../ClockDisplay/ClockDisplay";
 import Button from "../Button/Button";
 
 export default function UpdateClock() {
-    const [clock, setClock] = useState([0, 0, 0]);
+    const [clock, setClock] = useState([0, 60, 0]);
     const [isBtnDisabled, setIsBtnDisabled] = useState({ startBtn: false, stopBtn: true, resetBtn: true });
     const intervalId = useRef(null);
 
     const handleClock = () => {
         let [clockHrs, clockMins, clockSecs] = clock;
 
-        if (clockMins < 60 && clockSecs < 60) {
+        if (clockMins < 60 && clockSecs < 59) {
             clockSecs = clockSecs + 1;
         }
-        else if (clockMins < 60 && clockSecs === 60) {
+        else if (clockMins < 59 && clockSecs === 59) {
             clockSecs = 0;
             clockMins = clockMins + 1;
         }
-        else if (clockMins === 60) {
+        else if (clockMins === 59) {
             clockMins = 0;
             clockSecs = 0;
             clockHrs = clockHrs + 1;
@@ -26,7 +26,12 @@ export default function UpdateClock() {
             clockHrs = 0;
             clockMins = 0;
             clockSecs = 0;
-            alert("ERROR ENCOUNTERED!!! PLEASE CONTACT US IF THE ERROR PERSISTS!!!");
+            alert("ERROR ENCOUNTERED!!! PLEASE CONTACT US FOR SUPPORT!!!");
+            alert("RESETTING THE CLOCK!!!");
+            clearInterval(intervalId.current);
+            setIsBtnDisabled((prevState) => {
+                return { ...prevState, startBtn: false, stopBtn: true, resetBtn: true };
+            });
         }
 
         setClock(() => {
