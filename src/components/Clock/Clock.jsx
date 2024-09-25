@@ -3,7 +3,7 @@ import ClockDisplay from "../ClockDisplay/ClockDisplay";
 import Button from "../Button/Button";
 
 export default function UpdateClock() {
-    const [clock, setClock] = useState([0, 60, 0]);
+    const [clock, setClock] = useState([0, 0, 0]);
     const [isBtnDisabled, setIsBtnDisabled] = useState({ startBtn: false, stopBtn: true, resetBtn: true });
     const intervalId = useRef(null);
 
