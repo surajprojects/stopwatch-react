@@ -1,0 +1,64 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #f1faee;
+    color: #1d3557;
+}
+
+h1 {
+    font-size: 8rem;
+    margin-bottom: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+#clock {
+    font-size: 7rem;
+    margin: 5rem;
+}
+
+#clockControls {
+    display: flex;
+    flex-direction: row;
+}
+
+#btnStart,
+#btnStop,
+#btnReset {
+    cursor: pointer;
+    display: inline;
+    font-size: 2rem;
+    margin: 0.4rem;
+    color: #1d3557;
+    border-radius: 6%;
+    padding: 0.4rem 0rem;
+    width: 8rem;
+    margin: 0rem 0.8rem;
+    border: 3px solid black;
+}
+
+#btnStart {
+    background-color: #99d98c;
+}
+
+#btnStop {
+    background-color: #ef233c;
+    color: #000;
+}
+
+#btnReset {
+    background-color: #fca311;
+}
+
+#btnStart:disabled,
+#btnStop:disabled,
+#btnReset:disabled {
+    background-color: #e3e3e3;
+    color: gray;
+    border: 2px solid grey;
+}
